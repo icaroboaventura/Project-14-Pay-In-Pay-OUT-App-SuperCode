@@ -1,5 +1,5 @@
 import "./Home.css";
-import PayInPayOut from "../../Components/PayInPayOut/PayInPayOut";
+import PayInPayOut from "../../Components/GeldEinAus/GeldEinAus";
 
 const Home = () => {
   return (
