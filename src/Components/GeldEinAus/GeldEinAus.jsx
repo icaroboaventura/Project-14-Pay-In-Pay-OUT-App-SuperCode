@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./GeldEinAus.css";
 
 const GeldEinAus = () => {
-  const [Stand, setStand] = useState("");
+  const [Stand, setStand] = useState(0);
   const [Wert, setWert] = useState("");
 
   const EinzahlenAuszahlen = (zahlung) => {
@@ -18,9 +18,9 @@ const GeldEinAus = () => {
   };
 
   return (
-    <div className="container">
+    <div className="con">
       <section className="konto">
-        <h1>Kontostand:</h1>
+        <h1>Kontostand</h1>
         <p className="stand">{Stand}</p>
         <input type="number" name="bank" id="bank" value={Wert} onChange={(event) => setWert(Number(event.target.value))} />
         <div>
