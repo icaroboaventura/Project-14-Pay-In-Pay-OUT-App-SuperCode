@@ -2,20 +2,18 @@ import { useState } from "react";
 import "./GeldEinAus.css";
 
 const GeldEinAus = () => {
-  const [Stand, setStand] = useState(0);
-  const [Wert, setWert] = useState(0);
+  const [Stand, setStand] = useState("");
+  const [Wert, setWert] = useState("");
 
   const EinzahlenAuszahlen = (zahlung) => {
     if (Wert > 0 && zahlung === "einzahlung") {
-      setStand((vorStand) => vorStand + Wert);
-      setWert(0);
-    } else if (Wert === 0 && zahlung === "einzahlung") {
-      alert("0 € einzahlen nicht möglich!");
+      setStand(Number(Wert + Stand));
+      setWert("");
     } else if (Wert > 0 && Wert <= Stand && zahlung === "auszahlung") {
-      setStand((vorStand) => vorStand - Wert);
-      setWert(0);
+      setStand(Number(Stand - Wert));
+      setWert("");
     } else {
-      alert("Du versuchst einen ungültigen Betrag auszuzahlen!");
+      alert("Ungültigen Betrag!");
     }
   };
 
